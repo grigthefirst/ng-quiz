@@ -1,0 +1,13 @@
+<div class="question-tile" *ngFor="let question of questions" (click)="onSelect(question)">
+  <label>Level: {{question.level}}</label>
+</div>
+
+<div *ngIf="selectedQuestion">
+  <h2>This question has level {{selectedQuestion.level}}</h2>
+  <label>{{selectedQuestion.question}}</label>
+  <ul class="answers">
+    <li *ngFor="let answer of selectedQuestion.answers">{{answer}}</li>
+  </ul>
+  <input placeholder="Answer" [(ngModel)]="selectedQuestion.selectedAnswer" />
+  <label>You answer is {{selectedQuestion.selectedAnswer}}</label>
+</div>
